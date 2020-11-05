@@ -1,0 +1,15 @@
+const path = require('path');
+
+const express = require('express');
+
+const rootDir = require('../util/path');
+const adminData = require('./admin');
+
+const router = express.Router();
+
+const productsController = require('../controllers/products');
+
+// bom data vao shop.ejs de render (thong qua controller)
+router.get('/', productsController.getProducts);
+
+module.exports = router;
